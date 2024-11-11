@@ -7,6 +7,6 @@
  * Created: 10 nov. 2024
  */
 
-INSERT INTO usuarios (nombre, apePaterno, apeMaterno, password) VALUES ('Tony', 'Montana', 'Berceti', 'MrScar21');
-INSERT INTO usuarios (nombre, apePaterno, apeMaterno, password) VALUES ('Mary Jane', 'Watson', 'Smith', 'superhypersave');
-INSERT INTO usuarios (nombre, apePaterno, apeMaterno, password) VALUES ('Mark Sebastian', 'Grayson', 'Murphy', 'password');
+INSERT INTO usuarios (id,nombre, apePaterno, apeMaterno, password) VALUES (0,'Tony', 'Montana', 'Berceti', 'MrScar21');
+INSERT INTO usuarios (id,nombre, apePaterno, apeMaterno, password) VALUES (1,'Mary Jane', 'Watson', 'Smith', 'superhypersave');
+INSERT INTO usuarios (id,nombre, apePaterno, apeMaterno, password) VALUES (2,'Mark Sebastian', 'Grayson', 'Murphy', 'password');
