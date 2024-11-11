@@ -16,5 +16,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
     <h:body>
         <div>TODO write content</div>
         <p:spinner />
+        <h:form>
+            <p:commandButton value="Load Usuarios" action="#{usuariosController.loadUsuarios()}" update="usuariosTable" />
+
+            <p:dataTable id="usuariosTable" value="#{usuariosController.usuariosList}" var="usuario">
+                <p:column headerText="ID">
+                    #{usuario.id}
+                </p:column>
+                <p:column headerText="Username">
+                    #{usuario.nombre}
+                </p:column>
+                <p:column headerText="Password">
+                    #{usuario.password}
+                </p:column>
+            </p:dataTable>
+        </h:form>
+
+        <h:form>
+            <p:panel header="Add New Usuario">
+                <p:messages id="messages" />
+                <p:outputLabel for="username" value="Username:" />
+                <p:inputText id="username" value="#{usuariosController.newUsuario.nombre}" />
+                <p:outputLabel for="password" value="Password:" />
+                <p:inputText id="password" value="#{usuariosController.newUsuario.password}" />
+                <p:commandButton value="Save" action="#{usuariosController.saveUsuarios()}" update="usuariosTable messages" />
+            </p:panel>
+        </h:form>
     </h:body>
 </html>

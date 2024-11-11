@@ -25,8 +25,14 @@ public class UsuariosController {
     private RequestUsuarios request;
     private List<Usuarios> usuariosList;
     private Usuarios selectedUsuario;
+    private Usuarios newUsuario = new Usuarios(); // New field for the new Usuarios object
 
     public void loadUsuarios() {
         usuariosList = request.listUsuarios();
+    }
+
+    public void saveUsuarios() {
+        request.saveUsuario(newUsuario);
+        loadUsuarios();
     }
 }

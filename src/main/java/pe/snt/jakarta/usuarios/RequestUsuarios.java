@@ -15,10 +15,10 @@ import java.util.List;
  */
 @Stateful
 public class RequestUsuarios {
-
+    
     @PersistenceContext
     private EntityManager em;
-
+    
     public Usuarios getUsuario(Long id) {
         Usuarios user = em.find(Usuarios.class, id);
         return user;
@@ -26,8 +26,12 @@ public class RequestUsuarios {
     
     public List<Usuarios> listUsuarios() {
         List<Usuarios> usr = em.createQuery(
-                "SELECT * FROM Usuarios u", Usuarios.class
+                "SELECT u FROM Usuarios u", Usuarios.class
         ).getResultList();
         return usr;
+    }
+
+    public void saveUsuario(Usuarios usuario) {
+        em.persist(usuario);
     }
 }
